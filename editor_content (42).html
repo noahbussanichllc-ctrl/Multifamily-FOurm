@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Coast Multifamily Market Report - October 2025</title>
+    <style>
+        /* --- General & Reset --- */
+        :root {
+            --primary-blue: #2563EB;
+            --border-gray: #D1D5DB;
+            --text-dark: #1F2937;
+            --text-light: #4B5563;
+            --text-secondary: #6B7280;
+            --bg-white: #FFFFFF;
+            --bg-light-gray: #F9FAFB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px; /* Offset for sticky nav */
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-top: 0;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        h1 { font-size: 40px; }
+        h2 { font-size: 28px; border-bottom: 2px solid var(--border-gray); padding-bottom: 12px; margin-bottom: 32px; }
+        h3 { font-size: 22px; color: var(--primary-blue); }
+        h4 { font-size: 18px; }
+
+        /* --- Masthead & Header --- */
+        .masthead {
+            background-color: var(--bg-white);
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        .masthead-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .masthead p {
+            margin: 8px 0;
+            font-size: 18px;
+        }
+        .masthead .data-source {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 16px;
+        }
+        .headshot {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 24px;
+            height: 65px;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li a, .back-to-top {
+            display: block;
+            padding: 20px 20px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+        .back-to-top {
+            background-color: var(--primary-blue);
+            color: var(--bg-white);
+            border-radius: 6px;
+            padding: 8px 16px;
+            margin-left: 32px;
+            border-bottom: none;
+        }
+        .back-to-top:hover {
+            opacity: 0.9;
+        }
+        .nav-toggle { display: none; }
+
+        /* --- Executive Summary --- */
+        .executive-summary {
+            background-color: var(--bg-light-gray);
+            padding: 40px 24px;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        .executive-summary p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        /* --- Market Card Layout --- */
+        .market-card {
+            display: flex;
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .slide-column {
+            flex: 0 0 40%;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9ecef;
+        }
+        .summary-column {
+            flex: 0 0 60%;
+            padding: 24px;
+            background-color: var(--bg-light-gray);
+        }
+        .summary-column ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .summary-column li {
+            margin-bottom: 8px;
+        }
+        .summary-column p.summary {
+            border-left: 3px solid var(--primary-blue);
+            padding-left: 12px;
+            margin-top: 20px;
+        }
+        
+        /* --- Slide Image & Grids --- */
+        .slide-image {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .slide-label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        .slide-grid {
+            display: grid;
+            gap: 16px;
+            width: 100%;
+        }
+        .grid-1x2 { grid-template-rows: 1fr 1fr; }
+        .grid-2x1 { grid-template-columns: 1fr 1fr; }
+        .grid-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+        .grid-item { text-align: center; }
+
+        /* --- Conclusion Box --- */
+        .conclusion-box {
+            background-color: #e9f5ff;
+            border: 1px solid var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+        .conclusion-box h3 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+
+        /* --- PDF Embed Section --- */
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+        }
+        .pdf-placeholder {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: var(--bg-light-gray);
+        }
+        .download-button {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--bg-light-gray);
+            color: var(--text-secondary);
+            padding: 60px 24px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-gray);
+        }
+        .footer p {
+            margin: 4px 0;
+            line-height: 1.7;
+        }
+        .footer strong {
+            color: var(--text-dark);
+            font-size: 1.1em;
+        }
+        .footer hr {
+            width: 100px;
+            border: 0;
+            border-top: 1px solid var(--border-gray);
+            margin: 24px auto;
+        }
+        .footer .disclaimer {
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-top: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .market-card {
+                flex-direction: column;
+            }
+            .slide-column, .summary-column {
+                flex: 1 1 100%;
+            }
+            .headshot {
+                position: static;
+                transform: none;
+                margin: 0 auto 24px;
+                display: block;
+            }
+            .masthead {
+                padding: 40px 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            h3 { font-size: 20px; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                border-bottom: 1px solid var(--border-gray);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-toggle {
+                display: block;
+                font-size: 24px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 15px;
+                position: absolute;
+                left: 10px;
+            }
+            .navbar { justify-content: flex-end; }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <!-- ======================= MASTHEAD ======================= -->
+    <header class="masthead">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQFppgKrMsDMZA/profile-displayphoto-shrink_800_800/B56ZRDOp7lGoAc-/0/1736294703482?e=1762992000&v=beta&t=zCL62axBV-YIqigdZQUPIhAo-YrOYImFdJz0jKZZyzQ" alt="Noah Bussanich Headshot" class="headshot">
+        <div class="masthead-content">
+            <h1>West Coast Multifamily Forum Overview</h1>
+            <p><strong>Written and Prepared by Noah Bussanich, Apartment Broker</strong></p>
+            <p>(W) 503-200-2074 | (C) 971-706-3668</p>
+            <p>Noah.Bussanich@MarcusMillichap.com</p>
+            <p class="data-source">Data prepared by John Chang & Marcus & Millichap Research Services</p>
+        </div>
+    </header>
+
+    <!-- ======================= NAVIGATION ======================= -->
+    <nav class="navbar" id="navbar">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#overview" class="nav-item">Overview</a></li>
+            <li><a href="#portland-market" class="nav-item">Portland Market</a></li>
+            <li><a href="#seattle-market" class="nav-item">Seattle Market</a></li>
+            <li><a href="#full-presentation" class="nav-item">Full Presentation</a></li>
+        </ul>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </nav>
+
+    <main>
+        <!-- ======================= OVERVIEW & EXECUTIVE SUMMARY ======================= -->
+        <section id="overview" class="executive-summary">
+            <div class="container">
+                <h2 style="text-align: center; border: none; padding-bottom: 0;">Executive Summary</h2>
+                <p>
+                    Following significant economic headwinds, the Pacific Northwest multifamily market has reached a critical inflection point, signaling a constructive outlook for property owners. The national apartment market has fundamentally rebalanced as strong demand now outpaces a rapidly collapsing construction pipeline, creating a powerful tailwind for rent growth and occupancy gains through 2027. Both Seattle and Portland are poised to benefit, though their recovery paths diverge: Seattle has successfully absorbed its supply glut and shows remarkable equilibrium, while Portland is experiencing a dramatic, high-velocity recovery in its urban core. The persistent housing affordability crisis continues to lock renters in place, bolstering demand for apartments. This data presents a clear opportunity for existing asset holders, as limited future competition and improving fundamentals create a favorable environment for value appreciation and strong operational performance.
+                </p>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- ======================= MACROECONOMIC ENVIRONMENT SECTION ======================= -->
+            <section id="macro-economic">
+                <h2>Macroeconomic Environment: The National Backdrop</h2>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x1">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-03.png" alt="Economic Policy Uncertainty Index" class="slide-image">
+                                <p class="slide-label">Slide 3: Economic Policy Uncertainty Index</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-04.png" alt="Net Effective Tariffs" class="slide-image">
+                                <p class="slide-label">Slide 4: Net Effective Tariffs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Economic Uncertainty and Tariff Volatility</h3>
+                        <ul>
+                            <li>Economic policy uncertainty peaked at a record high of 725 in April 2025; while it has eased to 317, it remains nearly double normal levels.</li>
+                            <li>Previous spikes were tied to major global events like the Global Financial Crisis (2008), Brexit, and the Pandemic (2020).</li>
+                            <li>The current effective tariff rate on U.S. imports is 18%, the highest since 1934 and a stark increase from the 2.4% historical average.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> Elevated uncertainty and tariff pressures increase operational risks but also reinforce the value of apartments as a stable, inflation-hedging asset class. These conditions create headwinds for new development, benefiting existing properties.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x1">
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-05.png" alt="Jobs Report Changes" class="slide-image">
+                                <p class="slide-label">Slide 5: Jobs Report Changes</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-06.png" alt="Employment Market Down-Shift" class="slide-image">
+                                <p class="slide-label">Slide 6: Employment Market Down-Shift</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>A Cooling, Balanced Labor Market</h3>
+                        <ul>
+                            <li>Job growth collapsed to -95,000 in August 2025, with large downward revisions to prior data, confirming a significant economic slowdown.</li>
+                            <li>Annual job growth is forecast to slow from 2.6M in 2023 to just 900K in 2025.</li>
+                            <li>The ratio of job openings to unemployed persons is now 1:1, shifting the market from overheated to "in balance."</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> The labor market slowdown is the primary catalyst for expected Federal Reserve rate cuts. These cuts will lower borrowing costs for acquisitions and refinancing, providing a direct financial benefit to property investors.
+                        </p>
+                    </div>
+                </div>
+                
+                 <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-10.png" alt="Inflation Rates" class="slide-image">
+                                <p class="slide-label">Slide 10: Inflation Rates</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-11.png" alt="Producer Price Index and Tariffs" class="slide-image">
+                                <p class="slide-label">Slide 11: Producer Price Index & Tariff Impact</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-13.png" alt="Fed Rate Expectations" class="slide-image">
+                                <p class="slide-label">Slide 13: Fed Rate Expectations</p>
+                            </div>
+                             <div class="grid-item">
+                                <!-- Empty -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Inflation Cools, Paving Way for Rate Cuts</h3>
+                        <ul>
+                            <li>CPI inflation has fallen dramatically to 2.9% from a 9.1% peak, remaining just above the Fed's 2% target.</li>
+                            <li>Businesses are currently absorbing the majority of tariff costs, but future pass-through to consumers poses an inflation risk.</li>
+                            <li>The market is pricing in aggressive Fed easing, with a 94% probability of the Fed funds rate dropping to 3.50% by December.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> Anticipated rate cuts create a favorable window for refinancing existing debt or acquiring new assets at a lower cost of capital. This monetary easing directly supports higher property valuations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-15.png" alt="National Multifamily Supply & Demand" class="slide-image">
+                                <p class="slide-label">Slide 15: National Supply & Demand</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-16.png" alt="National Vacancy Rate Trends" class="slide-image">
+                                <p class="slide-label">Slide 16: National Vacancy Trends</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-17.png" alt="Construction Pipeline Collapse" class="slide-image">
+                                <p class="slide-label">Slide 17: Construction Pipeline Collapse</p>
+                            </div>
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-19.png" alt="Homeownership Affordability Gap" class="slide-image">
+                                <p class="slide-label">Slide 19: Homeownership Affordability Gap</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>National Outlook: The Bull Case for Existing Apartments</h3>
+                        <ul>
+                            <li><strong>Demand Exceeds Supply:</strong> National net absorption (159K units) has surpassed new completions (119K units), flipping the market dynamic.</li>
+                            <li><strong>Construction Collapsed:</strong> New apartment starts are down a staggering 76%, ensuring minimal new competition for the next 2-3 years.</li>
+                            <li><strong>Vacancy Peaked:</strong> The national vacancy rate is declining from its recent 8.0% peak, signaling a landlord-favorable environment ahead.</li>
+                            <li><strong>Unaffordable Homeownership:</strong> Buying a home costs 66% more per month than renting, creating a captive audience of renters and sustaining robust apartment demand.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> This is the most compelling data for owners. The combination of resurgent demand and a frozen construction pipeline creates a golden era for existing assets, supporting strong occupancy and above-average rent growth through 2027.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ======================= PORTLAND MARKET SECTION ======================= -->
+            <section id="portland-market">
+                <h2>Portland Market Deep Dive</h2>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-07.png" alt="Pacific Northwest Job Creation" class="slide-image">
+                                <p class="slide-label">Slide 7: PNW Job Creation</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-20.png" alt="Affordability Gap in Northwest Metros" class="slide-image">
+                                <p class="slide-label">Slide 20: Affordability Gap</p>
+                            </div>
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-21.png" alt="Portland Supply & Demand" class="slide-image">
+                                <p class="slide-label">Slide 21: Portland Supply & Demand</p>
+                            </div>
+                             <div class="grid-item">
+                                <!-- Empty -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Portland's Economic & Housing Fundamentals</h3>
+                        <ul>
+                            <li>Portland's job growth has been essentially flat in 2025, with an unemployment rate of 4.3% matching the U.S. average.</li>
+                             <li>A significant affordability gap exists, with the median Portland home payment ($2,399) far exceeding average rent.</li>
+                            <li>The apartment market is healthy and balanced, with demand (1.5K units absorbed) slightly exceeding new supply (1.3K units completed).</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> The housing affordability crisis provides a strong backstop for rental demand, even with a flat job market. A balanced supply/demand dynamic creates a stable foundation for steady occupancy and rent growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-26.png" alt="Portland Performance Details" class="slide-image">
+                                <p class="slide-label">Slide 26: Performance Details</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-27.png" alt="Portland Vacancy by Location & Class" class="slide-image">
+                                <p class="slide-label">Slide 27: Vacancy by Location & Class</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-28.png" alt="Portland Rent Growth Trends" class="slide-image">
+                                <p class="slide-label">Slide 28: Rent Growth Trends</p>
+                            </div>
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-29.png" alt="Portland Submarket Trends" class="slide-image">
+                                <p class="slide-label">Slide 29: Submarket Trends</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>A Tale of Two Markets: Downtown Soars, Suburbs Lag</h3>
+                        <ul>
+                            <li><strong>Construction Evaporated:</strong> Units under construction have collapsed by a staggering 81% (from 13K to 2.4K), setting up a severely supply-constrained market for 2026-2027.</li>
+                            <li><strong>Vacancy Highest in Class C:</strong> Affordable Class C has the highest vacancy (5.8%), while luxury Class A is tightest (4.1%), indicating a flight to quality.</li>
+                            <li><strong>Dramatic Rent Bifurcation:</strong> Downtown (CBD) rents are seeing exceptional 9.4% growth, while suburban rents are nearly flat.</li>
+                            <li><strong>Top Submarkets:</strong> Central Portland leads with 9.1% rent growth, while suburban tech corridors like Hillsboro are struggling with a 4.9% decline.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> A clear "flight to quality" is underway. Investment focus should be on urban core assets where demand is surging. The 81% drop in construction is the single most bullish indicator for future rent growth across the entire metro, creating significant upside for existing properties.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-30.png" alt="Boise Market Stabilization" class="slide-image">
+                                <p class="slide-label">Slide 30: Boise Market</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-31.png" alt="Spokane Market Equilibrium" class="slide-image">
+                                <p class="slide-label">Slide 31: Spokane Market</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-32.png" alt="Tri-Cities Balance" class="slide-image">
+                                <p class="slide-label">Slide 32: Tri-Cities Market</p>
+                            </div>
+                            <div class="grid-item">
+                                <!-- Empty -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Secondary Markets Find Equilibrium</h3>
+                        <ul>
+                            <li><strong>Boise:</strong> The boom/bust cycle has stabilized. Supply and demand are perfectly balanced (2.4K each), and rent growth is recovering at 3.3%.</li>
+                            <li><strong>Spokane:</strong> The market has reached equilibrium after rapid expansion. Vacancy is healthy at 4.8% and rent growth is flat but stable.</li>
+                            <li><strong>Tri-Cities:</strong> A small but balanced market with a 4.9% vacancy rate and steady 2.1% rent growth.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> Key secondary markets in the region have successfully absorbed their construction waves and are now stable. This reduces regional volatility and points to a period of modest, steady growth, making them viable alternative investment markets.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conclusion-box">
+                    <h3>Portland Market: Actionable Conclusion</h3>
+                    <p>
+                        The Portland multifamily market is defined by a high-velocity urban recovery and a powerful, supply-driven forward outlook. While suburban submarkets lag, the urban core's exceptional rent growth signals a prime investment opportunity. The virtual evaporation of the construction pipeline is the critical factor, ensuring minimal new competition and creating significant pricing power for existing assets into 2027. This translates directly to higher future rental income and supports property value appreciation. For current owners, this is a strong "hold" environment, especially for assets in Central Portland and Vancouver. For buyers, targeting Class A/B properties in the urban core aligns with the market's clear flight-to-quality trend, offering the most compelling risk-adjusted returns over the next 24-36 months.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ======================= SEATTLE MARKET SECTION ======================= -->
+            <section id="seattle-market">
+                <h2>Seattle Market Deep Dive</h2>
+                
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-07.png" alt="Pacific Northwest Job Creation" class="slide-image">
+                                <p class="slide-label">Slide 7: PNW Job Creation</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-20.png" alt="Affordability Gap in Northwest Metros" class="slide-image">
+                                <p class="slide-label">Slide 20: Affordability Gap</p>
+                            </div>
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-21.png" alt="Seattle Supply & Demand" class="slide-image">
+                                <p class="slide-label">Slide 21: Seattle Supply & Demand</p>
+                            </div>
+                             <div class="grid-item">
+                                <!-- Empty -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Seattle's Labor Headwinds & Housing Fundamentals</h3>
+                        <ul>
+                            <li>Seattle is underperforming the nation with a loss of 11,000 jobs year-to-date, driven by tech sector weakness.</li>
+                            <li>The region has the most severe affordability crisis, with the median Seattle home payment ($3,173) creating a massive barrier to homeownership.</li>
+                            <li>Despite job losses, apartment demand (6.9K units absorbed) is still slightly outpacing new supply (6.2K completions).</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> The extreme cost of homeownership provides a powerful, inelastic demand base for apartments that counteracts the soft job market. This dynamic protects property cash flows and supports stable occupancy levels even during economic weakness.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                        <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-22.png" alt="Seattle Performance Details" class="slide-image">
+                                <p class="slide-label">Slide 22: Performance Details</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-23.png" alt="Seattle Vacancy by Location & Class" class="slide-image">
+                                <p class="slide-label">Slide 23: Vacancy by Location & Class</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-24.png" alt="Seattle Rent Growth Trends" class="slide-image">
+                                <p class="slide-label">Slide 24: Rent Growth Trends</p>
+                            </div>
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-25.png" alt="Seattle Submarket Trends" class="slide-image">
+                                <p class="slide-label">Slide 25: Submarket Trends</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Seattle Market Reaches Healthy Equilibrium</h3>
+                        <ul>
+                            <li><strong>Supply Glut Absorbed:</strong> Seattle has successfully worked through its oversupply, with vacancy stabilizing at a very healthy 4.0%.</li>
+                            <li><strong>Construction Pipeline Collapsed:</strong> Units under construction are down 60%, removing future supply risk and paving the way for a tightening market.</li>
+                            <li><strong>Balanced Across the Board:</strong> Vacancy is remarkably consistent across locations (CBD vs. Suburban) and property classes (A, B, and C), indicating a fundamentally healthy market.</li>
+                            <li><strong>Downtown Leads Recovery:</strong> Downtown Seattle is the top performer with 5.8% rent growth, signaling a strong return-to-office trend and renewed urban demand.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> Seattle's market has achieved an ideal equilibrium, de-risking investments. The 60% drop in construction is a powerful catalyst for future rent growth. The downtown recovery points to specific submarket opportunities for outsized returns.
+                        </p>
+                    </div>
+                </div>
+                
+                 <div class="conclusion-box">
+                    <h3>Seattle Market: Actionable Conclusion</h3>
+                    <p>
+                        The Seattle multifamily market has successfully transitioned from oversupplied to a state of healthy equilibrium, presenting a stable investment landscape. Despite a soft job market, strong underlying demand and a collapsed construction pipeline have stabilized vacancy at an impressive 4.0%. This supply-constrained outlook provides a clear runway for renewed rent growth and value appreciation. The robust recovery in Downtown Seattle signals that now is the time to focus on urban assets poised to capture return-to-office momentum. For current owners, the market supports a "hold and grow" strategy, focusing on pushing rents as fundamentals tighten. For buyers, the balanced risk profile and premium long-term outlook justify Seattle's higher price point, making it a prime target for capital preservation and steady growth.
+                    </p>
+                </div>
+            </section>
+            
+             <!-- ======================= CAPITAL MARKETS SECTION ======================= -->
+            <section id="capital-markets">
+                <h2>Capital Markets & Investment Outlook</h2>
+
+                <div class="market-card">
+                    <div class="slide-column">
+                         <div class="slide-grid grid-2x2">
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-34.png" alt="National Transaction Volume" class="slide-image">
+                                <p class="slide-label">Slide 34: National Transaction Volume</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-35.png" alt="PNW Transaction Activity" class="slide-image">
+                                <p class="slide-label">Slide 35: PNW Transaction Activity</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-36.png" alt="Prices & Cap Rates" class="slide-image">
+                                <p class="slide-label">Slide 36: Prices & Cap Rates</p>
+                            </div>
+                             <div class="grid-item">
+                                <img src="./images/10.14.25 Greenpearl Seattle (2)-37.png" alt="Cap Rate Spread Analysis" class="slide-image">
+                                <p class="slide-label">Slide 37: Cap Rate Spread Analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-column">
+                        <h3>Transaction Freeze Thaws, But Spreads Remain Tight</h3>
+                        <ul>
+                            <li>National apartment transaction volume has returned to pre-pandemic norms, indicating the market is functioning again.</li>
+                            <li>The Pacific Northwest is lagging this recovery, with Seattle down 14% and Portland down 6% from pre-pandemic transaction levels.</li>
+                            <li>Seattle commands a premium price ($262K/unit) and lower cap rate (5.3%), while Portland aligns with the national average ($201K/unit, 5.9% cap rate).</li>
+                            <li>The spread between apartment cap rates and the 10-year Treasury is historically narrow, posing a risk to values if Treasury rates rise or spreads revert to the mean.</li>
+                        </ul>
+                        <p class="summary"><strong>Summary:</strong> The national transaction market has normalized, but a buyer-seller pricing gap persists in the PNW, particularly Seattle. The tight cap rate spread is a key risk to monitor; however, expected Fed cuts should provide a favorable interest rate environment that mitigates some of this risk for new acquisitions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ======================= FULL PRESENTATION PDF SECTION ======================= -->
+            <section id="full-presentation">
+                <h2>Full Presentation PDF</h2>
+                <div class="pdf-container">
+                   <div class="pdf-placeholder">
+                        <p>The complete presentation can be viewed and downloaded here.</p>
+                        <a href="./pdf/10.14.25 Greenpearl Seattle (2).pdf" class="download-button" download>Download PDF</a>
+                        <p style="font-size: 14px; color: #6c757d; margin-top: 24px;">(A PDF viewer would be embedded on this page for direct viewing)</p>
+                   </div>
+                   <!-- Example of embed code:
+                   <iframe src="./pdf/10.14.25 Greenpearl Seattle (2).pdf" width="100%" height="100%" title="Full Presentation PDF"></iframe>
+                   -->
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="footer">
+        <p>Prepared by:</p>
+        <p><strong>Noah Bussanich</strong></p>
+        <p>Apartment Investment Broker | Marcus & Millichap</p>
+        <br>
+        <p>(W) 503-200-2074 | (C) 971-706-3668</p>
+        <p>Noah.Bussanich@MarcusMillichap.com</p>
+        <hr>
+        <p>Market Data & Research:</p>
+        <p><strong>John Chang, Chief Intelligence & Analytics Officer</strong></p>
+        <p>Marcus & Millichap Research Services</p>
+        <br>
+        <p>Report Date: October 2025</p>
+        <p>West Coast Multifamily Forum</p>
+
+        <p class="disclaimer">
+            Disclaimer: This report is for informational purposes only and does not constitute investment advice.
+            Market data is subject to change. Past performance does not guarantee future results.
+            Consult with qualified professionals before making investment decisions.
+        </p>
+    </footer>
+
+    <script>
+        // --- Mobile Navigation Toggle ---
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // --- Active Navigation Link on Scroll ---
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-item');
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const navHeight = navbar.offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navHeight - 20;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').substring(1) === current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        // --- Close mobile nav on item click ---
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
