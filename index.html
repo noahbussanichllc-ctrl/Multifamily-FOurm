@@ -152,7 +152,7 @@
             overflow: hidden;
         }
         .slide-column {
-            flex: 0 0 40%;
+            flex: 0 0 55%;
             padding: 24px;
             display: flex;
             flex-direction: column;
@@ -161,8 +161,8 @@
             background-color: #e9ecef;
         }
         .summary-column {
-            flex: 0 0 60%;
-            padding: 24px;
+            flex: 0 0 45%;
+            padding: 32px;
             background-color: var(--bg-light-gray);
         }
         .summary-column ul {
@@ -202,6 +202,17 @@
         .grid-2x1 { grid-template-columns: 1fr 1fr; }
         .grid-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
         .grid-item { text-align: center; }
+        .grid-1-2-1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            width: 100%;
+        }
+        .grid-1-2-1 > .grid-item:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: 50%;
+        }
 
         /* --- Conclusion Box --- */
         .conclusion-box {
@@ -372,11 +383,9 @@
                         <div class="slide-grid grid-2x1">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-03.png" alt="Economic Policy Uncertainty Index" class="slide-image">
-                                <p class="slide-label">Slide 3: Economic Policy Uncertainty Index</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-04.png" alt="Net Effective Tariffs" class="slide-image">
-                                <p class="slide-label">Slide 4: Net Effective Tariffs</p>
                             </div>
                         </div>
                     </div>
@@ -397,11 +406,9 @@
                         <div class="slide-grid grid-2x1">
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-05.png" alt="Jobs Report Changes" class="slide-image">
-                                <p class="slide-label">Slide 5: Jobs Report Changes</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-06.png" alt="Employment Market Down-Shift" class="slide-image">
-                                <p class="slide-label">Slide 6: Employment Market Down-Shift</p>
                             </div>
                         </div>
                     </div>
@@ -419,21 +426,15 @@
                 
                  <div class="market-card">
                     <div class="slide-column">
-                        <div class="slide-grid grid-2x2">
+                        <div class="slide-grid grid-1-2-1">
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-10.png" alt="Inflation Rates" class="slide-image">
-                                <p class="slide-label">Slide 10: Inflation Rates</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-11.png" alt="Producer Price Index and Tariffs" class="slide-image">
-                                <p class="slide-label">Slide 11: Producer Price Index & Tariff Impact</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-13.png" alt="Fed Rate Expectations" class="slide-image">
-                                <p class="slide-label">Slide 13: Fed Rate Expectations</p>
-                            </div>
-                             <div class="grid-item">
-                                <!-- Empty -->
                             </div>
                         </div>
                     </div>
@@ -454,19 +455,15 @@
                         <div class="slide-grid grid-2x2">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-15.png" alt="National Multifamily Supply & Demand" class="slide-image">
-                                <p class="slide-label">Slide 15: National Supply & Demand</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-16.png" alt="National Vacancy Rate Trends" class="slide-image">
-                                <p class="slide-label">Slide 16: National Vacancy Trends</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-17.png" alt="Construction Pipeline Collapse" class="slide-image">
-                                <p class="slide-label">Slide 17: Construction Pipeline Collapse</p>
                             </div>
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-19.png" alt="Homeownership Affordability Gap" class="slide-image">
-                                <p class="slide-label">Slide 19: Homeownership Affordability Gap</p>
                             </div>
                         </div>
                     </div>
@@ -490,21 +487,15 @@
 
                 <div class="market-card">
                     <div class="slide-column">
-                        <div class="slide-grid grid-2x2">
+                        <div class="slide-grid grid-1-2-1">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-07.png" alt="Pacific Northwest Job Creation" class="slide-image">
-                                <p class="slide-label">Slide 7: PNW Job Creation</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-20.png" alt="Affordability Gap in Northwest Metros" class="slide-image">
-                                <p class="slide-label">Slide 20: Affordability Gap</p>
                             </div>
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-21.png" alt="Portland Supply & Demand" class="slide-image">
-                                <p class="slide-label">Slide 21: Portland Supply & Demand</p>
-                            </div>
-                             <div class="grid-item">
-                                <!-- Empty -->
                             </div>
                         </div>
                     </div>
@@ -525,19 +516,15 @@
                         <div class="slide-grid grid-2x2">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-26.png" alt="Portland Performance Details" class="slide-image">
-                                <p class="slide-label">Slide 26: Performance Details</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-27.png" alt="Portland Vacancy by Location & Class" class="slide-image">
-                                <p class="slide-label">Slide 27: Vacancy by Location & Class</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-28.png" alt="Portland Rent Growth Trends" class="slide-image">
-                                <p class="slide-label">Slide 28: Rent Growth Trends</p>
                             </div>
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-29.png" alt="Portland Submarket Trends" class="slide-image">
-                                <p class="slide-label">Slide 29: Submarket Trends</p>
                             </div>
                         </div>
                     </div>
@@ -556,21 +543,15 @@
                 
                 <div class="market-card">
                     <div class="slide-column">
-                        <div class="slide-grid grid-2x2">
+                        <div class="slide-grid grid-1-2-1">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-30.png" alt="Boise Market Stabilization" class="slide-image">
-                                <p class="slide-label">Slide 30: Boise Market</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-31.png" alt="Spokane Market Equilibrium" class="slide-image">
-                                <p class="slide-label">Slide 31: Spokane Market</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-32.png" alt="Tri-Cities Balance" class="slide-image">
-                                <p class="slide-label">Slide 32: Tri-Cities Market</p>
-                            </div>
-                            <div class="grid-item">
-                                <!-- Empty -->
                             </div>
                         </div>
                     </div>
@@ -600,21 +581,15 @@
                 
                 <div class="market-card">
                     <div class="slide-column">
-                        <div class="slide-grid grid-2x2">
+                        <div class="slide-grid grid-1-2-1">
                             <div class="grid-item">
                                 <img src="./10.14.25 Greenpearl Seattle (2)-07.png" alt="Pacific Northwest Job Creation" class="slide-image">
-                                <p class="slide-label">Slide 7: PNW Job Creation</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25 Greenpearl Seattle (2)-20.png" alt="Affordability Gap in Northwest Metros" class="slide-image">
-                                <p class="slide-label">Slide 20: Affordability Gap</p>
                             </div>
                              <div class="grid-item">
                                 <img src="./10.14.25 Greenpearl Seattle (2)-21.png" alt="Seattle Supply & Demand" class="slide-image">
-                                <p class="slide-label">Slide 21: Seattle Supply & Demand</p>
-                            </div>
-                             <div class="grid-item">
-                                <!-- Empty -->
                             </div>
                         </div>
                     </div>
@@ -635,19 +610,15 @@
                         <div class="slide-grid grid-2x2">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-22.png" alt="Seattle Performance Details" class="slide-image">
-                                <p class="slide-label">Slide 22: Performance Details</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-23.png" alt="Seattle Vacancy by Location & Class" class="slide-image">
-                                <p class="slide-label">Slide 23: Vacancy by Location & Class</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-24.png" alt="Seattle Rent Growth Trends" class="slide-image">
-                                <p class="slide-label">Slide 24: Rent Growth Trends</p>
                             </div>
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-25.png" alt="Seattle Submarket Trends" class="slide-image">
-                                <p class="slide-label">Slide 25: Submarket Trends</p>
                             </div>
                         </div>
                     </div>
@@ -681,19 +652,15 @@
                          <div class="slide-grid grid-2x2">
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-34.png" alt="National Transaction Volume" class="slide-image">
-                                <p class="slide-label">Slide 34: National Transaction Volume</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-35.png" alt="PNW Transaction Activity" class="slide-image">
-                                <p class="slide-label">Slide 35: PNW Transaction Activity</p>
                             </div>
                             <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-36.png" alt="Prices & Cap Rates" class="slide-image">
-                                <p class="slide-label">Slide 36: Prices & Cap Rates</p>
                             </div>
                              <div class="grid-item">
                                 <img src="./10.14.25%20Greenpearl%20Seattle%20(2)-37.png" alt="Cap Rate Spread Analysis" class="slide-image">
-                                <p class="slide-label">Slide 37: Cap Rate Spread Analysis</p>
                             </div>
                         </div>
                     </div>
